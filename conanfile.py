@@ -32,8 +32,8 @@ class BaldrConan(ConanFile):
 
     def package(self):
         if self.settings.os == "Windows":
-            self.copy("include/*.hpp", dst="include/baldr", keep_path=False)
-            self.copy("include/*.ipp", dst="include/baldr", keep_path=False)
+            self.copy("baldr/include/*.hpp", dst="include/baldr", keep_path=False)
+            self.copy("baldr/include/*.ipp", dst="include/baldr", keep_path=False)
             self.copy("*baldr.lib", dst="lib", keep_path=False)
             self.copy("*.dll", dst="bin", keep_path=False)
         else:
