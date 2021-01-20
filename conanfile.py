@@ -6,7 +6,7 @@ class BaldrConan(ConanFile):
     requires = (("eigen/3.3.9"),
                 ("fmt/7.1.3"),
                 ("glew/2.1.0"))
-    version = "0.2"
+    version = "0.3"
     license = "unlicense"
     author = "Richard Vock vock@cs.uni-bonn.de"
     url = "https://github.com/richard-vock/conan-baldr"
