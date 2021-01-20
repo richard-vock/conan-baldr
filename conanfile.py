@@ -31,14 +31,12 @@ class BaldrConan(ConanFile):
             cmake.build()
 
     def package(self):
+        self.copy("baldr/include/*.hpp", dst="include/baldr", keep_path=False)
+        self.copy("baldr/include/*.ipp", dst="include/baldr", keep_path=False)
         if self.settings.os == "Windows":
-            self.copy("baldr/include/*.hpp", dst="include/baldr", keep_path=False)
-            self.copy("baldr/include/*.ipp", dst="include/baldr", keep_path=False)
             self.copy("*baldr.lib", dst="lib", keep_path=False)
             self.copy("*.dll", dst="bin", keep_path=False)
         else:
-            self.copy("include/*.hpp")
-            self.copy("include/*.ipp")
             self.copy("*.so", dst="lib", keep_path=False)
             self.copy("*.a", dst="lib", keep_path=False)
 
